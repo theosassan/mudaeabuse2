@@ -539,4 +539,4 @@ async def daily_info():
     rank += 1
     
 #https://discord.com/api/oauth2/authorize?client_id=987491513183375370&permissions=8&scope=bot
-bot.run('OTg3NDkxNTEzMTgzMzc1Mzcw.GexaXT.legIdb6kiV4j_y2Q_HVlPSyNYpe58vgpWakgwM')
+bot.run(os.environ['TOKEN'])
