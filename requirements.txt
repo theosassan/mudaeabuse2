@@ -1,4 +1,5 @@
 discord
+bs4
 asgiref==3.5.2
 backports.entry-points-selectable==1.1.1
 backports.zoneinfo==0.2.1
