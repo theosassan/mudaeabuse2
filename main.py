@@ -5,7 +5,7 @@ import os
 
 client = commands.Bot(command_prefix = ".", self_bot = True, help_command = None)
 
-token = os.getenv("token")
+token = os.getenv("TOKEN")
 
 @client.event
 async def on_ready():
