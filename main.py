@@ -12,6 +12,6 @@ async def on_ready():
 async def abuse(ctx):
   for _ in range(10):
     await ctx.send("$wa")
-    await sleep(0.5)
+    await sleep(1)
   
 client.run(token, bot = False)
