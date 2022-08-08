@@ -36,9 +36,10 @@ async def on_message(message):
             await message.add_reaction(emoji)
 
 @tasks.loop(hours = 1)
-async def rolls(ctx):
+async def rolls():
+  channel = client.get_channel(766491456885227550)
   for _ in range(10):
-    await ctx.send("$wa")
+    await channel.send("$wa")
     await sleep(1)
         
 client.run(token, bot = False)
