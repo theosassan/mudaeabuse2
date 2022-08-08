@@ -1,12 +1,10 @@
 import discord
 from discord.ext import commands
 from asyncio import sleep
+import os
 
 client = commands.Bot(command_prefix = ".", self_bot = True, help_command = None)
-
-
-token = "NDU3NTQ1MTA4MTk2MTYzNTg0.GFBzQo.YDLPTMddvl4ZB2QEWNoqFbBJSbLZPVk2ya6b3I"
-
+token = os.getenv("TOKEN")
 @client.event
 async def on_ready():
   print("hi")
