@@ -20,7 +20,8 @@ async def abuse(ctx):
 
 @client.event
 async def on_message(message):
-    if message.author.id == 432610292342587392 and len(message.embeds) > 0:
+    if message.author.id == 432610292342587392:
+      try:
         async for message in message.channel.history(limit=1):
           embed = message.embeds[0]
           msgdict = embed.to_dict()
@@ -34,6 +35,8 @@ async def on_message(message):
           emoji = '❤️'
           if claims <= 500:
             await message.add_reaction(emoji)
+      except:
+        pass
 
 @tasks.loop(hours = 1)
 async def rolls():
