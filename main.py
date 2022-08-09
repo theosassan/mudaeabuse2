@@ -10,7 +10,7 @@ token = os.getenv("TOKEN")
 @client.event
 async def on_ready():
   print("hi")
-  await sleep(3000)
+  await sleep(2700)
   await rolls.start()
   
 @client.command()
@@ -58,7 +58,7 @@ async def rolls():
         emoji = '❤️'
         if claims <= 500:
           await message.add_reaction(emoji)
-       except:
+      except:
         pass
     await sleep(1)
     
