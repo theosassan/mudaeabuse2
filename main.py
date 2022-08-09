@@ -19,7 +19,7 @@ async def abuse(ctx):
     await ctx.send("$wa")
     await sleep(1)
 
-@client.event
+#@client.event
 #async def on_message(message):
 #    if message.author.id == 432610292342587392:
 #      try:
