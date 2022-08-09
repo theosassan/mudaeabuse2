@@ -10,7 +10,7 @@ token = os.getenv("TOKEN")
 @client.event
 async def on_ready():
   print("hi")
-  await sleep(2700)
+  #await sleep(2700)
   await rolls.start()
   
 @client.command()
@@ -41,9 +41,10 @@ async def abuse(ctx):
 
 @tasks.loop(hours = 1)
 async def rolls():
-  channel = client.get_channel(766491456885227550)
-  for _ in range(10):
+  channel = client.get_channel(946077984559865948)
+  for _ in range(1):
     await channel.send("$wa")
+    await sleep(1)
     async for message in channel.history(limit=1):
       try:
         embed = message.embeds[0]
@@ -56,11 +57,25 @@ async def rolls():
         print(claims)
         print(name)
         emoji = '❤️'
-        if claims <= 500:
+        if name == "Kaori Miyazono":
           await message.add_reaction(emoji)
+          await channel.send('@294184126343282690 HOLY SHIT FINALLY')
+        elif claims <= 500:
+          await message.add_reaction(emoji)
+        elif claims <= 100000:
+          ask = await channel.send('<@294184126343282690> should I claim?')
+          await ask.add_reaction(emoji)
+          await sleep(5)
+          async for ask in channel.history(limit=1):
+            reactions = await ask.reactions[0].users().flatten()
+            if len(reactions) >= 2:
+              await ask.delete()
+              await sleep(1)
+              async for message in channel.history(limit=1):
+                await message.add_reaction(emoji)
       except:
         pass
-    await sleep(1)
+    await sleep(2)
     
         
 client.run(token, bot = False)
