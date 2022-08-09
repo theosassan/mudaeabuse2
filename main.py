@@ -10,7 +10,7 @@ token = os.getenv("TOKEN")
 @client.event
 async def on_ready():
   print("hi")
-  #await sleep(2700)
+  await sleep(2460)
   await rolls.start()
   
 @client.command()
@@ -41,7 +41,7 @@ async def abuse(ctx):
 
 @tasks.loop(hours = 1)
 async def rolls():
-  channel = client.get_channel(946077984559865948)
+  channel = client.get_channel(766491456885227550)
   for _ in range(1):
     await channel.send("$wa")
     await sleep(1)
