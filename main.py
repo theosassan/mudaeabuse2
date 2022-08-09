@@ -47,7 +47,6 @@ async def rolls():
       try:
         embed = message.embeds[0]
         msgdict = embed.to_dict()
-        print(msgdict)
         name = msgdict['author']['name']
         claims = msgdict['description']
         claims = claims.split('Claims: #')[1]
