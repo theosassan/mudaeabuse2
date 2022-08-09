@@ -59,10 +59,10 @@ async def rolls():
           await channel.send('@294184126343282690 HOLY SHIT FINALLY')
         elif claims <= 500:
           await message.add_reaction(emoji)
-        elif claims <= 100000:
+        elif claims <= 2000:
           ask = await channel.send('<@294184126343282690> should I claim?')
           await ask.add_reaction(emoji)
-          await sleep(5)
+          await sleep(15)
           async for ask in channel.history(limit=1):
             reactions = await ask.reactions[0].users().flatten()
             if len(reactions) >= 2:
