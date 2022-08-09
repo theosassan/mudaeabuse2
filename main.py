@@ -45,18 +45,21 @@ async def rolls():
   for _ in range(10):
     await channel.send("$wa")
     async for message in channel.history(limit=1):
-      embed = message.embeds[0]
-      msgdict = embed.to_dict()
-      print(msgdict)
-      name = msgdict['author']['name']
-      claims = msgdict['description']
-      claims = claims.split('Claims: #')[1]
-      claims = int(claims.split('\n')[0])
-      print(claims)
-      print(name)
-      emoji = '❤️'
-      if claims <= 500:
-        await message.add_reaction(emoji)
+      try:
+        embed = message.embeds[0]
+        msgdict = embed.to_dict()
+        print(msgdict)
+        name = msgdict['author']['name']
+        claims = msgdict['description']
+        claims = claims.split('Claims: #')[1]
+        claims = int(claims.split('\n')[0])
+        print(claims)
+        print(name)
+        emoji = '❤️'
+        if claims <= 500:
+          await message.add_reaction(emoji)
+       except:
+        pass
     await sleep(1)
     
         
