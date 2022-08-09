@@ -26,11 +26,11 @@ async def on_message(message):
         async for message in message.channel.history(limit=1):
           embed = message.embeds[0]
           msgdict = embed.to_dict()
-          print(name)
           name = msgdict['author']['name']
           claims = msgdict['description']
           claims = claims.split('Claims: #')[1]
           claims = int(claims.split('\n')[0])
+          print(name, claims)
           emoji = '❤️'
           if name == 'Kaori Miyazono':
             await message.add_reaction(emoji)
@@ -52,8 +52,7 @@ async def rolls():
         claims = msgdict['description']
         claims = claims.split('Claims: #')[1]
         claims = int(claims.split('\n')[0])
-        print(claims)
-        print(name)
+        print(name, claims)
         emoji = '❤️'
         if name == "Kaori Miyazono":
           await message.add_reaction(emoji)
