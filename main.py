@@ -26,7 +26,7 @@ async def on_message(message):
         async for message in message.channel.history(limit=1):
           embed = message.embeds[0]
           msgdict = embed.to_dict()
-          print(msgdict)
+          print(name)
           name = msgdict['author']['name']
           claims = msgdict['description']
           claims = claims.split('Claims: #')[1]
