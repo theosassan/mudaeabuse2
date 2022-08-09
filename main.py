@@ -40,7 +40,7 @@ async def on_message(message):
 @tasks.loop(hours = 1)
 async def rolls():
   channel = client.get_channel(766491456885227550)
-  for _ in range(1):
+  for _ in range(10):
     await channel.send("$wa")
     await sleep(1)
     async for message in channel.history(limit=1):
