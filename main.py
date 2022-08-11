@@ -56,9 +56,9 @@ async def rolls():
         if name == "Kaori Miyazono":
           await message.add_reaction(emoji)
           await channel.send('@294184126343282690 HOLY SHIT FINALLY')
-        elif claims <= 500:
+        elif claims <= 1000:
           await message.add_reaction(emoji)
-        elif claims <= 2000:
+        elif claims <= 2500:
           ask = await channel.send('<@294184126343282690> should I claim?')
           await ask.add_reaction(emoji)
           await sleep(15)
