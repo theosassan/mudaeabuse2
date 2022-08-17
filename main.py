@@ -40,7 +40,12 @@ async def on_message(message):
 @tasks.loop(hours = 1)
 async def rolls():
   channel = client.get_channel(766491456885227550)
-  for _ in range(10):
+  emoji = '❤️'
+  await channel.send("$mk")
+  await sleep(0.5)
+  async for message in channel.history(limit=1):
+    await message.add_reaction(emoji)
+  for _ in range(18):
     await channel.send("$wa")
     await sleep(1)
     async for message in channel.history(limit=1):
@@ -52,7 +57,6 @@ async def rolls():
         claims = claims.split('Claims: #')[1]
         claims = int(claims.split('\n')[0])
         print(name, claims)
-        emoji = '❤️'
         await sleep (0.5)
         if name == "Kaori Miyazono":
           await message.add_reaction(emoji)
