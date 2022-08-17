@@ -46,7 +46,7 @@ async def rolls():
   await sleep(0.5)
   async for message in channel.history(limit=1):
     await message.add_reaction(emoji)
-  for _ in range(1):
+  for _ in range(18):
     await channel.send("$wa")
     await sleep(1)
     async for message in channel.history(limit=1):
