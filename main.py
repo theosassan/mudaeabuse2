@@ -10,7 +10,7 @@ token = os.getenv("TOKEN")
 @client.event
 async def on_ready():
   print("hi")
-  await sleep(1320)
+  #await sleep(1320)
   await rolls.start()
   
 @client.command()
