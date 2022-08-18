@@ -10,7 +10,7 @@ token = os.getenv("TOKEN")
 @client.event
 async def on_ready():
   print("hi")
-  #await sleep(1320)
+  await sleep(1200)
   await rolls.start()
   
 @client.command()
@@ -68,7 +68,18 @@ async def rolls():
         await sleep (0.5)
         if name == "Kaori Miyazono":
           await message.add_reaction(emoji)
-          await channel.send('<@294184126343282690> HOLY SHIT FINALLY')
+          await channel.send('<@294184126343282690> you should... see this.')
+          await sleep(0.5)
+          for _ in range(5):
+            await channel.send("""
+            
+            
+            
+            .
+            
+            
+            
+            """)
         elif kakera >= 400:
           await message.add_reaction(emoji)
           await sleep(2)
@@ -90,7 +101,7 @@ async def rolls():
               await sleep(1)
               async for message in channel.history(limit=1):
                 await message.add_reaction(emoji)
-        elif claims <= 1200:
+        elif claims <= 1600:
           ask = await channel.send('<@294184126343282690> should I claim?')
           await ask.add_reaction(emoji)
           await sleep(15)
