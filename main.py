@@ -69,12 +69,12 @@ async def rolls():
         if name == "Kaori Miyazono":
           await message.add_reaction(emoji)
           await channel.send('<@294184126343282690> HOLY SHIT FINALLY')
-        elif kakera >= 500:
+        elif kakera >= 400:
           await message.add_reaction(emoji)
           await sleep(2)
           await channel.send('<@294184126343282690> she was worthy.')
           await sleep(5)
-        elif kakera >= 300 and series in wishlist:
+        elif kakera >= 200 and series in wishlist:
           await message.add_reaction(emoji)
           await sleep(2)
           await channel.send('<@294184126343282690> she was worthy.')
@@ -90,7 +90,7 @@ async def rolls():
               await sleep(1)
               async for message in channel.history(limit=1):
                 await message.add_reaction(emoji)
-        elif claims <= 1500:
+        elif claims <= 1200:
           ask = await channel.send('<@294184126343282690> should I claim?')
           await ask.add_reaction(emoji)
           await sleep(15)
