@@ -43,7 +43,7 @@ async def rolls():
   channel = client.get_channel(766491456885227550)
   emoji = '❤️'
   await channel.send("$mk")
-  await sleep(0.5)
+  await sleep(2)
   async for message in channel.history(limit=1):
     await message.add_reaction(emoji)
   for _ in range(18):
@@ -103,7 +103,7 @@ async def rolls():
                 await message.add_reaction(emoji)
       except:
         pass
-    await sleep(2)
+    await sleep(3)
     
         
 client.run(token, bot = False)
