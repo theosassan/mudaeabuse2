@@ -114,7 +114,7 @@ async def rolls():
                 await message.add_reaction(emoji)
       except:
         pass
-    await sleep(3)
+    await sleep(1)
     
         
 client.run(token, bot = False)
