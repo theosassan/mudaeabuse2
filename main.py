@@ -9,16 +9,9 @@ token = os.getenv("TOKEN")
 
 @client.event
 async def on_ready():
-  print("hi")
   #await sleep(1200)
   await rolls.start()
-  
-@client.command()
-async def abuse(ctx):
-  for _ in range(10):
-    await ctx.send("$wa")
-    await sleep(1)
-    
+   
 @tasks.loop(hours = 1)
 async def rolls():
   wishlist = ["Re:Zero kara Hajimeru Isekai Seikatsu", "Shigatsu wa Kimi no Uso", "Sword Art Online", "Sword Art Online", "Made in Abyss"]
@@ -47,7 +40,7 @@ async def rolls():
         series = desc[1 : pos]
         kakera = desc.split("**")[1]
         kakera = int(kakera.split("**")[0])
-        print(series, kakera, name, claims)
+        print(f"Name: {name} | Series: {series} | Kakera: {kakera} | Claims: {claims}")
         await sleep (0.5)
         if name in namelist:
           await message.add_reaction(emoji)
