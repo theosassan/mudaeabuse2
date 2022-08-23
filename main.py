@@ -34,7 +34,6 @@ async def rolls():
         claims = desc.split('Claims: #')[1]
         claims = int(claims.split('\n')[0])
         desc = repr(desc)
-        print(desc)
         pos = desc.index("Claims")
         pos = pos - 2
         series = desc[1 : pos]
