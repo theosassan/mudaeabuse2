@@ -18,28 +18,11 @@ async def abuse(ctx):
   for _ in range(10):
     await ctx.send("$wa")
     await sleep(1)
-
-@client.event
-async def on_message(message):
-    if message.author.id == 432610292342587392:
-      try:
-        async for message in message.channel.history(limit=1):
-          embed = message.embeds[0]
-          msgdict = embed.to_dict()
-          name = msgdict['author']['name']
-          claims = msgdict['description']
-          claims = claims.split('Claims: #')[1]
-          claims = int(claims.split('\n')[0])
-          print(name, claims)
-          emoji = '❤️'
-          if name == 'Kaori Miyazono':
-            await message.add_reaction(emoji)
-      except:
-        pass
-
+    
 @tasks.loop(hours = 1)
 async def rolls():
   wishlist = ["Re:Zero kara Hajimeru Isekai Seikatsu", "Shigatsu wa Kimi no Uso", "Sword Art Online", "Sword Art Online", "Made in Abyss"]
+  namelist = ["Kaori Miyazono", "Zero Two", "Shouko Nishimiya", "Rosé"]
   channel = client.get_channel(766491456885227550)
   emoji = '❤️'
   await channel.send("$mk")
@@ -66,20 +49,11 @@ async def rolls():
         kakera = int(kakera.split("**")[0])
         print(series, kakera, name, claims)
         await sleep (0.5)
-        if name == "Kaori Miyazono":
+        if name in namelist:
           await message.add_reaction(emoji)
-          await channel.send('<@294184126343282690> you should... see this.')
-          await sleep(0.5)
-          for _ in range(5):
-            await channel.send("""
-            
-            
-            
-            .
-            
-            
-            
-            """)
+          await sleep(2)
+          await channel.send('<@294184126343282690> hope you got your wish.')
+          await sleep(5)
         elif kakera >= 400:
           await message.add_reaction(emoji)
           await sleep(2)
