@@ -18,6 +18,7 @@ async def rolls():
   namelist = ["Kaori Miyazono", "Zero Two", "Shouko Nishimiya", "Rosé"]
   channel = client.get_channel(766491456885227550)
   emoji = '❤️'
+  await channel.send("$dk")
   await channel.send("$mk")
   await sleep(2)
   async for message in channel.history(limit=1):
