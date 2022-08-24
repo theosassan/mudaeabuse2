@@ -14,7 +14,7 @@ async def on_ready():
    
 @tasks.loop(hours = 1)
 async def rolls():
-  wishlist = ["Re:Zero kara Hajimeru Isekai Seikatsu", "Shigatsu wa Kimi no Uso", "Sword Art Online", "Sword Art Online", "Made in Abyss"]
+  wishlist = ["Komi-san wa, Comyushou desu.", "Shigatsu wa Kimi no Uso", "Sword Art Online", "Sword Art Online", "Made in Abyss"]
   namelist = ["Kaori Miyazono", "Zero Two", "Shouko Nishimiya", "Rosé"]
   channel = client.get_channel(766491456885227550)
   emoji = '❤️'
