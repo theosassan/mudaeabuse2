@@ -44,20 +44,20 @@ async def rolls():
         if name in namelist:
           await message.add_reaction(emoji)
           await sleep(2)
-          await channel.send('<@294184126343282690> hope you got your wish.')
+          await channel.send("<@294184126343282690> j'espère tu as eu ton souhait.")
           await sleep(5)
         elif kakera >= 400:
           await message.add_reaction(emoji)
           await sleep(2)
-          await channel.send('<@294184126343282690> she was worthy.')
+          await channel.send('<@294184126343282690> elle était digne.')
           await sleep(5)
         elif kakera >= 200 and series in wishlist:
           await message.add_reaction(emoji)
           await sleep(2)
-          await channel.send('<@294184126343282690> she was worthy.')
+          await channel.send('<@294184126343282690> elle était digne, je pense.')
           await sleep(5)
         elif series in wishlist:
-          ask = await channel.send('<@294184126343282690> should I claim?')
+          ask = await channel.send('<@294184126343282690> dois-je le réclamer?')
           await ask.add_reaction(emoji)
           await sleep(15)
           async for ask in channel.history(limit=1):
@@ -68,7 +68,7 @@ async def rolls():
               async for message in channel.history(limit=1):
                 await message.add_reaction(emoji)
         elif claims <= 1600:
-          ask = await channel.send('<@294184126343282690> should I claim?')
+          ask = await channel.send('<@294184126343282690> dois-je le réclamer?')
           await ask.add_reaction(emoji)
           await sleep(15)
           async for ask in channel.history(limit=1):
