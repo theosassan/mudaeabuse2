@@ -83,4 +83,4 @@ async def rolls():
     await sleep(1)
     
         
-client.run(token, bot = False)
+client.run(token)
