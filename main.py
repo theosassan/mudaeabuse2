@@ -3,7 +3,7 @@ from discord.ext import commands, tasks
 from asyncio import sleep
 import os
 
-client = commands.Bot(command_prefix = "%", self_bot = True, help_command = None)
+client = commands.Bot(command_prefix = "%", self_bot = True, help_command = None, intents=discord.Intents.default())
 
 token = os.getenv("TOKEN")
 
